@@ -1,0 +1,42 @@
+@import "styles/colors";
+
+.Dropdown {
+  border-radius: 5px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+
+  .list {
+    display: flex;
+    flex-direction: column;
+
+    > * {
+      align-items: center;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid $secondary-main;
+      cursor: pointer;
+      display: flex;
+      font-family: Roboto, sans-serif;
+      list-style-type: none;
+      padding: 10px;
+      text-align: left;
+
+      > p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .loading {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+}

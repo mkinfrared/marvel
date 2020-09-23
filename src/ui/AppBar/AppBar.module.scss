@@ -1,0 +1,11 @@
+@import "styles/colors";
+@import "styles/vars";
+
+.AppBar {
+  align-items: center;
+  background-color: $secondary-main;
+  display: flex;
+  height: $header-height;
+  padding: 0 24px;
+  width: 100%;
+}

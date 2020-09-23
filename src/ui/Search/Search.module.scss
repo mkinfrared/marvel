@@ -1,0 +1,10 @@
+.Search {
+  position: relative;
+  width: 300px;
+
+  .dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    width: 100%;
+  }
+}

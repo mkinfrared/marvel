@@ -1,0 +1,61 @@
+@import "styles/colors";
+
+.HeroRow {
+  border: 1px solid $secondary-main;
+  display: flex;
+  height: 250px;
+  margin-bottom: 20px;
+
+  @media (max-width: 640px) {
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+  }
+
+  &:not(:last-child) {
+    border-bottom-color: transparent;
+  }
+
+  .thumbnail {
+    border: 1px solid $secondary-main;
+    width: 250px;
+
+    img,
+    svg {
+      height: 100%;
+      object-fit: cover;
+      object-position: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 640px) {
+      height: 400px;
+      max-width: 400px;
+      width: 100%;
+
+      img,
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px;
+
+    h4 {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    p {
+      line-height: 1.4;
+      margin-top: 20px;
+      text-align: justify;
+    }
+  }
+}

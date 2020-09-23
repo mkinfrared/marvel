@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeroDetail /> match the snapshot 1`] = `
+<div>
+  <div
+    class="HeroDetail"
+  >
+    <div
+      class="loading"
+    >
+      <div
+        class="Spinner"
+        style="width: 25px; height: 25px;"
+      />
+    </div>
+  </div>
+</div>
+`;
