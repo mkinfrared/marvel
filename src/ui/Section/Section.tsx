@@ -13,4 +13,6 @@ const Section = ({ children, title }: SectionProps) => {
   );
 };
 
+export { Section };
+
 export default React.memo(Section);

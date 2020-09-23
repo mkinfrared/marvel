@@ -16,4 +16,6 @@ const Card = ({ imageSrc, title }: CardProps) => {
   );
 };
 
+export { Card };
+
 export default React.memo(Card);
