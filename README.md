@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Setup
+
+1. In the root directory create an .env file
+2. Fill in required variables with your values (refer to .env.example file as an example)
+3. Install the dependencies. This project uses yarn v1. Make sure you have it [installed](https://classic.yarnpkg.com/en/docs/install/#windows-stable)
+4. Refer to *Available Scripts* mentioned below to start the project
+
 ## Available Scripts
 
 In the project directory, you can run:
