@@ -4,14 +4,16 @@ import React from "react";
 import { AppBar } from "./AppBar";
 
 describe("<AppBar />", () => {
+  const Component = <AppBar />;
+
   it("should be defined", () => {
-    const { container } = render(<AppBar />);
+    const { container } = render(Component);
 
     expect(container).toBeDefined();
   });
 
-  it("match the snapshot", () => {
-    const { container } = render(<AppBar />);
+  it("should match the snapshot", () => {
+    const { container } = render(Component);
 
     expect(container).toMatchSnapshot();
   });

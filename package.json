@@ -5,13 +5,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cross-env CI=true react-scripts test --collectCoverage",
+    "test": "cross-env CI=true react-scripts test --collectCoverage --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
     "lint": "yarn format && yarn lint:styles && yarn lint:ts ",
     "lint:ts": "eslint --cache --fix \"src/**/*.ts?(x)\"",
     "lint:styles": "stylelint \"**/*.scss\" --syntax scss --fix --cache",
     "format": "prettier --write \"./src\"",
-    "precommit": "yarn lint && git add .",
+    "precommit": "yarn lint && yarn test && git add .",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "coverage": "open-cli coverage/lcov-report/index.html"
@@ -76,6 +76,7 @@
     "open-cli": "^6.0.1",
     "prettier": "^2.1.1",
     "react-is": "^16.13.1",
+    "redux-saga-test-plan": "^4.0.0-rc.3",
     "stylelint": "^13.7.1",
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
@@ -102,7 +103,9 @@
     }
   },
   "jest": {
-    "collectCoverageFrom": ["!src/**/*.stories.tsx"],
+    "collectCoverageFrom": [
+      "!src/**/*.stories.tsx"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 80,
@@ -115,7 +118,7 @@
       "index",
       "serviceWorker",
       "containers",
-      "store",
+      "store.ts",
       "__snapshots__"
     ]
   }

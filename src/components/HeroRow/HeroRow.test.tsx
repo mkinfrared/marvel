@@ -19,12 +19,16 @@ describe("<HeroRow />", () => {
   );
 
   it("should be defined", () => {
+    (window as any).innerWidth = 640;
+
     const { container } = render(Component);
 
     expect(container).toBeDefined();
   });
 
   it("match the snapshot", () => {
+    (window as any).innerWidth = 642;
+
     const { container } = render(Component);
 
     expect(container).toMatchSnapshot();

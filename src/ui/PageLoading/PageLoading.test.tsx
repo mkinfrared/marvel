@@ -12,7 +12,7 @@ describe("<PageLoading />", () => {
     expect(container).toBeDefined();
   });
 
-  it("match the snapshot", () => {
+  it("should match the snapshot", () => {
     const { container } = render(<Component />);
 
     expect(container).toMatchSnapshot();

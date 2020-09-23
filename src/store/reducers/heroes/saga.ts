@@ -92,7 +92,7 @@ function* fetchHeroes() {
   const params = { limit, offset: offset * limit };
 
   try {
-    const response = yield call(marvelApi, "/characters", { params });
+    const response = yield call(marvelApi.get, "/characters", { params });
     const { results } = response.data.data;
 
     yield put(fetchHeroesSuccess(results));
@@ -108,3 +108,14 @@ function* heroesSaga() {
 }
 
 export default heroesSaga;
+
+export {
+  watchFetchHeroes,
+  watchFetchHero,
+  fetchHeroes,
+  fetchHero,
+  fetchHeroComics,
+  fetchHeroEvents,
+  fetchHeroStories,
+  fetchHeroSeries
+};

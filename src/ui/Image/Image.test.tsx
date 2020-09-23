@@ -1,49 +1,82 @@
-/* eslint-disable @typescript-eslint/no-empty-function,class-methods-use-this */
-import { render } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 
 import { Image } from "./Image";
 
-jest.mock("ui/ImagePlaceholder", () => () => "<ImagePlaceholder />");
-
 describe("<Image />", () => {
-  const Component = Image;
   const loadHeight = 42;
   const loadWidth = 47;
   const src = "marklar";
   const props = { loadHeight, loadWidth, src };
+  const Component = <Image {...props} />;
 
   beforeAll(() => {
-    (global.IntersectionObserver as any) = class IntersectionObserver {
-      constructor() {}
+    // (global.IntersectionObserver as any) = class IntersectionObserver {
+    //   constructor() {}
+    //
+    //   disconnect() {
+    //     return null;
+    //   }
+    //
+    //   observe() {
+    //     return null;
+    //   }
+    //
+    //   takeRecords() {
+    //     return null;
+    //   }
+    //
+    //   unobserve() {
+    //     return null;
+    //   }
+    // };
 
-      disconnect() {
-        return null;
-      }
+    (global.IntersectionObserver as any) = jest.fn(() => ({
+      constructor: jest.fn().mockReturnThis(),
 
-      observe() {
-        return null;
-      }
+      disconnect: jest.fn(),
 
-      takeRecords() {
-        return null;
-      }
+      observe: jest.fn(),
 
-      unobserve() {
-        return null;
-      }
-    };
+      takeRecords: jest.fn(),
+
+      unobserve: jest.fn()
+    }));
   });
 
   it("should be defined", () => {
-    const { container } = render(<Component {...props} />);
+    const { container } = render(Component);
 
     expect(container).toBeDefined();
   });
 
-  it("match the snapshot", () => {
-    const { container } = render(<Component {...props} />);
+  it("should load image and remove placeholder", () => {
+    const { container } = render(Component);
+    const image = container.querySelector("img");
+    const placeholder = container.querySelector("svg");
 
-    expect(container).toMatchSnapshot();
+    expect(placeholder).toBeInTheDocument();
+
+    fireEvent(image!, new Event("load"));
+
+    expect(placeholder).not.toBeInTheDocument();
+  });
+
+  it("should fail image, remove placeholder and image and display failure block", async () => {
+    const { container, findByText } = render(Component);
+    const image = container.querySelector("img");
+    const placeholder = container.querySelector("svg");
+
+    expect(placeholder).toBeInTheDocument();
+
+    fireEvent(image!, new Event("error"));
+
+    const failed = await findByText("Failed to load content");
+
+    expect(image).not.toBeInTheDocument();
+
+    expect(placeholder).not.toBeInTheDocument();
+
+    expect(failed).toBeInTheDocument();
   });
 });

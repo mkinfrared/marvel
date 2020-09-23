@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<HeroesList /> match the snapshot 1`] = `
+exports[`<HeroesList /> should match the snapshot 1`] = `
 <div>
   <div
     class="HeroesList"
@@ -9,8 +9,84 @@ exports[`<HeroesList /> match the snapshot 1`] = `
       style="position: relative; height: 0px; width: 0px; overflow: auto; will-change: transform; direction: ltr;"
     >
       <div
-        style="height: 0px; width: 100%;"
-      />
+        style="height: 2750px; width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; height: 250px; width: 100%;"
+        >
+          <div
+            class="HeroRow"
+          >
+            <div
+              class="thumbnail"
+            >
+              &lt;Image /&gt;
+            </div>
+            <div
+              class="info"
+            >
+              <a
+                href="/hero/1009368"
+              >
+                Iron Man
+              </a>
+              <p>
+                Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          style="position: absolute; left: 0px; top: 250px; height: 250px; width: 100%;"
+        >
+          <div
+            class="HeroRow"
+          >
+            <div
+              class="thumbnail"
+            >
+              &lt;Image /&gt;
+            </div>
+            <div
+              class="info"
+            >
+              <a
+                href="/hero/1"
+              >
+                Iron Man
+              </a>
+              <p>
+                Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          style="position: absolute; left: 0px; top: 500px; height: 250px; width: 100%;"
+        >
+          <div
+            class="HeroRow"
+          >
+            <div
+              class="thumbnail"
+            >
+              &lt;Image /&gt;
+            </div>
+            <div
+              class="info"
+            >
+              <a
+                href="/hero/2"
+              >
+                Iron Man
+              </a>
+              <p>
+                Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

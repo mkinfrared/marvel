@@ -37,27 +37,8 @@ const Search = <T,>({
 
       onInputChange(event as React.ChangeEvent<HTMLInputElement>);
     },
-    []
+    [getOptionLabel, onChange, onInputChange]
   );
-
-  // const getOptions = () => {
-  //   return options.map((option, index) => {
-  //     const { id } = option as Record<string, any>;
-  //     const key = id ?? index;
-  //
-  //     if (renderOptions) {
-  //       return (
-  //         <React.Fragment key={key}>{renderOptions(option)}</React.Fragment>
-  //       );
-  //     }
-  //
-  //     return (
-  //       <li key={key} onMouseDown={handleChange(option)}>
-  //         {getOptionLabel(option)}
-  //       </li>
-  //     );
-  //   });
-  // };
 
   const optionsToRender = useMemo(() => {
     return options.map((option, index) => {

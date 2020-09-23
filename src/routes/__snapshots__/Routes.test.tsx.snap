@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PageLoading /> should match the snapshot 1`] = `
+exports[`<Routes /> should match the snapshot 1`] = `
 <div>
   <div
     class="PageLoading"
